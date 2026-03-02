@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: devops-hsn-hello1
+spec:
+  selector:
+    app: devops-hsn-hello1
+  ports:
+  - port: 9090
+    targetPort: 8080
+  type: ClusterIP

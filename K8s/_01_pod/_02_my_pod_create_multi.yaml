@@ -1,0 +1,60 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: devops-hsn02-hello1
+  labels:
+    app.kubernetes.io/name: devops-hsn02-hello1
+    hsn-type: backend
+    hsn-modul: modul1
+    hsn-project-name: hello-hsn02
+spec:
+  containers:
+  - name: devops-hsn02-hello1
+    image: hsntpl/demodevops-v104
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+      - containerPort: 9091
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: devops-hsn02-hello2
+  labels:
+    app.kubernetes.io/name: devops-hsn02-hello2
+    hsn-type: frontend
+    hsn-modul: modul1
+    hsn-project-name: hello-hsn02
+spec:
+  containers:
+  - name: devops-hsn02-hello2
+    image: hsntpl/demodevops-v104
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+      - containerPort: 9092
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: devops-hsn02-hello3
+  labels:
+    app.kubernetes.io/name: devops-hsn02-hello3
+    hsn-type: mobil
+    hsn-modul: modul3
+    hsn-project-name: hello-hsn02
+spec:
+  containers:
+  - name: devops-hsn02-hello3
+    image: hsntpl/demodevops-v104
+    resources:
+      limits:
+        memory: "256Mi"
+        cpu: "500m"
+    ports:
+      - containerPort: 9093
+
