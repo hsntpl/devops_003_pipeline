@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.example</groupId>
     <artifactId>devops_003_pipeline</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.1</version>
     <name>devops_003_pipeline</name>
     <description>devops_003_pipeline</description>
     <url/>
@@ -49,6 +49,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
+        <finalName>devops-application</finalName>
     </build>
 
 </project>

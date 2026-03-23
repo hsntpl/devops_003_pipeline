@@ -5,10 +5,10 @@ FROM eclipse-temurin:21-jre-alpine
 ARG JAR_FILE=target/*.jar
 
 #projenin jar hali docker icine kopyala
-COPY ${JAR_FILE} hsn_app.jar
+COPY ${JAR_FILE} devops-application.jar
 
 #uygulama ic portu sabitle
 EXPOSE 8080
 
 #uygulamayı java komutla calistir.
-ENTRYPOINT ["java","-jar","hsn_app.jar"]
+ENTRYPOINT ["java","-jar","devops-application.jar"]
