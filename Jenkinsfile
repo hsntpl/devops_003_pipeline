@@ -70,7 +70,7 @@ pipeline {
              
                     if (isUnix()){
                         //sh 'docker login -u hsntpl -p %Cred_hsnDockerHub%'
-                        sh 'docker push hsntpl/devops-application:latest'
+                        sh 'docker push hsntpl/devops-application:latest '
                         echo 'sh çalıştı'
                     }else
                     {
