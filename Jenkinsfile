@@ -64,13 +64,13 @@ pipeline {
             steps {
                 echo 'DockerHub a image ı gönder'
                 script{
-                withCredentials([usernamePassword(credentialsId: 'ID_DockerHub', passwordVariable: 'dckr_pat_UOkXzHZwTiv3PRc7S9LtMHAikm8', usernameVariable: 'Cred_hsnDockerHub')]) {
+                  withCredentials([string(credentialsId: 'Cred_DockerHub', variable: 'hsnCred_DockerHub')]) {
 
                 
              
                     if (isUnix()){
                         //sh 'docker login -u hsntpl -p %Cred_hsnDockerHub%'
-                        sh 'docker push hsntpl/devops-application:latest '
+                        sh 'docker push hsntpl/devops-application:latest'
                         echo 'sh çalıştı'
                     }else
                     {
