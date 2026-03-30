@@ -66,8 +66,6 @@ pipeline {
                 script{
                   withCredentials([string(credentialsId: 'Cred_DockerHub', variable: 'hsnCred_DockerHub')]) {
 
-                
-             
                     if (isUnix()){
                         //sh 'docker login -u hsntpl -p %Cred_hsnDockerHub%'
                         sh 'docker push hsntpl/devops-application:latest'
