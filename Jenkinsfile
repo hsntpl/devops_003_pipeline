@@ -89,7 +89,8 @@ pipeline {
             steps {
                 script {
                     echo 'K8s image ı çek ve pod a dönüştür.'
-                    kubernetesDeploy configs: 'deployment-service.yaml', kubeconfigId: 'ID_kubernetes'
+                    kubernetesDeploy (configs: 'deployment-service.yaml', kubeconfigId: 'ID_kubernetes')
+                    echo 'K8s çalıştı'
                 }
             }
         }
