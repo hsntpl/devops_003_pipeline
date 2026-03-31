@@ -62,7 +62,7 @@ pipeline {
         
         stage('Docker image to DockerHub') {
             steps {
-                echo 'DockerHub a image ı gönder'
+                echo 'DockerHub a image gönderiliyor'
                 script{
                   withCredentials([string(credentialsId: 'Cred_DockerHub', variable: 'hsnCred_DockerHub')]) {
 
@@ -70,12 +70,15 @@ pipeline {
                         //sh 'docker login -u hsntpl -p %Cred_hsnDockerHub%'
                         sh 'docker push hsntpl/devops-application:latest'
                         echo 'sh çalıştı'
+                        echo 'DockerHub a image gönderildi'
                     }else
                     {
                         //bat 'docker login -u hsntpl -p %Cred_hsnDockerHub%'
                         bat 'docker push hsntpl/devops-application:latest'
                         echo 'bat çalıştı'
+                        echo 'DockerHub a image gönderildi'
                     }
+
                 }
 }
 
@@ -85,6 +88,7 @@ pipeline {
         stage('Kubernetes') {
             steps {
                 echo 'K8s image ı çek ve pod a dönüştür.'
+                kubernetesDeploy configs: '', kubeConfig: [path: ''], kubeconfigId: 'ID_kubernetes', secretName: '', ssh: [sshCredentialsId: '*', sshServer: ''], textCredentials: [certificateAuthorityData: '', clientCertificateData: '', clientKeyData: '', serverUrl: 'https://']
             }
         }
         
