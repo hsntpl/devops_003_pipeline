@@ -44,6 +44,7 @@
             <groupId>org.yaml</groupId>
             <artifactId>snakeyaml</artifactId>
             <scope>runtime</scope>
+            <version>1.33</version>
         </dependency>
     </dependencies>
 
