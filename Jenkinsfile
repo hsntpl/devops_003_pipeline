@@ -88,7 +88,7 @@ pipeline {
         stage('Kubernetes') {
             steps {
                 echo 'K8s image ı çek ve pod a dönüştür.'
-                kubernetesDeploy configs: '', kubeConfig: [path: ''], kubeconfigId: 'ID_kubernetes', secretName: '', ssh: [sshCredentialsId: '*', sshServer: ''], textCredentials: [certificateAuthorityData: '', clientCertificateData: '', clientKeyData: '', serverUrl: 'https://']
+                kubernetesDeploy configs: 'deployment-service.yaml', kubeConfig: [path: ''], kubeconfigId: 'ID_kubernetes', secretName: '', ssh: [sshCredentialsId: '*', sshServer: ''], textCredentials: [certificateAuthorityData: '', clientCertificateData: '', clientKeyData: '', serverUrl: 'https://']
             }
         }
         
